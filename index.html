@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prabu I — Senior InDesign Automation Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+  <!-- ══ NAV ══════════════════════════════════════════════ -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <div class="nav-logo">PI<span>.</span></div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a class="nav-resume-btn" href="Prabu_I_Resume.pdf" download>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Resume
+      </a>
+    </div>
+  </nav>
+
+  <!-- ══ HERO ═════════════════════════════════════════════ -->
+  <section id="hero">
+    <canvas id="particle-canvas"></canvas>
+    <div class="hero-content">
+      <div class="hero-greeting">Hello, I'm</div>
+      <h1 class="hero-name">Prabu <span>I</span></h1>
+      <div class="hero-typewriter">
+        <span id="typewriter"></span><span class="cursor">|</span>
+      </div>
+      <p class="hero-desc">
+        9+ years crafting automation scripts &amp; workflows for Adobe Creative Suite.<br/>
+        Turning repetitive tasks into one-click solutions.
+      </p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn-primary">View My Work</a>
+        <a href="Prabu_I_Resume.pdf" download class="btn-outline">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Download Resume
+        </a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num" data-target="9">0</span><span>+</span><div class="stat-label">Years Exp.</div></div>
+        <div class="stat"><span class="stat-num" data-target="90">0</span><span>%</span><div class="stat-label">Automation</div></div>
+        <div class="stat"><span class="stat-num" data-target="6">0</span><span>+</span><div class="stat-label">Projects</div></div>
+        <div class="stat"><span class="stat-num" data-target="4">0</span><span>+</span><div class="stat-label">Companies</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="code-window">
+        <div class="code-title-bar">
+          <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+          <span class="code-filename">automate.jsx</span>
+        </div>
+        <div class="code-body">
+          <pre id="code-anim"></pre>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <div class="scroll-dot"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ══ ADOBE APPS BANNER ═════════════════════════════════ -->
+  <section id="adobe-banner">
+    <div class="adobe-label">Expert in Adobe Ecosystem &amp; Enfocus Switch Workflows</div>
+    <div class="adobe-apps">
+
+      <!-- InDesign -->
+      <div class="adobe-app" data-app="InDesign">
+        <div class="app-icon">
+          <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="idBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#6B0F2A"/>
+                <stop offset="100%" stop-color="#2D0011"/>
+              </linearGradient>
+            </defs>
+            <rect width="60" height="60" rx="12" fill="url(#idBg)"/>
+            <text x="10" y="44" font-size="30" font-weight="900" font-family="Adobe Clean,Arial Black,Arial" fill="#FF3366">Id</text>
+          </svg>
+        </div>
+        <span>InDesign</span>
+      </div>
+
+      <!-- Photoshop -->
+      <div class="adobe-app" data-app="Photoshop">
+        <div class="app-icon">
+          <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="psBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#003A5E"/>
+                <stop offset="100%" stop-color="#001525"/>
+              </linearGradient>
+            </defs>
+            <rect width="60" height="60" rx="12" fill="url(#psBg)"/>
+            <text x="8" y="44" font-size="30" font-weight="900" font-family="Adobe Clean,Arial Black,Arial" fill="#31A8FF">Ps</text>
+          </svg>
+        </div>
+        <span>Photoshop</span>
+      </div>
+
+      <!-- Illustrator -->
+      <div class="adobe-app" data-app="Illustrator">
+        <div class="app-icon">
+          <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="aiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#4A2600"/>
+                <stop offset="100%" stop-color="#1A0D00"/>
+              </linearGradient>
+            </defs>
+            <rect width="60" height="60" rx="12" fill="url(#aiBg)"/>
+            <text x="9" y="44" font-size="30" font-weight="900" font-family="Adobe Clean,Arial Black,Arial" fill="#FF9A00">Ai</text>
+          </svg>
+        </div>
+        <span>Illustrator</span>
+      </div>
+
+      <!-- Acrobat -->
+      <div class="adobe-app" data-app="Acrobat">
+        <div class="app-icon">
+          <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="acBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#5C0000"/>
+                <stop offset="100%" stop-color="#260000"/>
+              </linearGradient>
+            </defs>
+            <rect width="60" height="60" rx="12" fill="url(#acBg)"/>
+            <text x="8" y="44" font-size="30" font-weight="900" font-family="Adobe Clean,Arial Black,Arial" fill="#FF3D3D">Ac</text>
+          </svg>
+        </div>
+        <span>Acrobat</span>
+      </div>
+
+      <!-- Photoshop API -->
+      <div class="adobe-app" data-app="Photoshop API">
+        <div class="app-icon">
+          <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="psapiBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#003A5E"/>
+                <stop offset="100%" stop-color="#001525"/>
+              </linearGradient>
+              <linearGradient id="apiBadge" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#31A8FF" stop-opacity="0.3"/>
+                <stop offset="100%" stop-color="#31A8FF" stop-opacity="0.1"/>
+              </linearGradient>
+            </defs>
+            <rect width="60" height="60" rx="12" fill="url(#psapiBg)"/>
+            <text x="8" y="32" font-size="22" font-weight="900" font-family="Adobe Clean,Arial Black,Arial" fill="#31A8FF">Ps</text>
+            <rect x="6" y="38" width="48" height="16" rx="5" fill="url(#apiBadge)" stroke="#31A8FF" stroke-width="0.8" stroke-opacity="0.5"/>
+            <text x="13" y="50" font-size="11" font-weight="800" font-family="Arial" fill="#31A8FF" letter-spacing="1">API</text>
+          </svg>
+        </div>
+        <span>Ps API</span>
+      </div>
+
+      <!-- UXP -->
+      <div class="adobe-app" data-app="UXP">
+        <div class="app-icon">
+          <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="uxpBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#3D0080"/>
+                <stop offset="100%" stop-color="#1A0040"/>
+              </linearGradient>
+              <linearGradient id="uxpGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#C084FC"/>
+                <stop offset="100%" stop-color="#7C3AED"/>
+              </linearGradient>
+            </defs>
+            <rect width="60" height="60" rx="12" fill="url(#uxpBg)"/>
+            <!-- Hexagon frame -->
+            <polygon points="30,8 48,18.5 48,39.5 30,50 12,39.5 12,18.5" fill="none" stroke="url(#uxpGrad)" stroke-width="2" opacity="0.7"/>
+            <text x="9" y="37" font-size="15" font-weight="900" font-family="Arial" fill="url(#uxpGrad)" letter-spacing="0.5">UXP</text>
+          </svg>
+        </div>
+        <span>UXP</span>
+      </div>
+
+      <!-- Enfocus Switch — brand accurate cyan/blue -->
+      <div class="adobe-app adobe-app--featured" data-app="Enfocus Switch">
+        <div class="app-icon app-icon--featured enfocus-icon">
+          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="swBg" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#0D1B3E"/>
+                <stop offset="100%" stop-color="#050D1F"/>
+              </linearGradient>
+              <linearGradient id="swArc" x1="0%" y1="0%" x2="100%" y2="100%" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#0077FF"/>
+                <stop offset="50%" stop-color="#00A8E8"/>
+                <stop offset="100%" stop-color="#00C2CB"/>
+              </linearGradient>
+              <radialGradient id="swHub" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#00D4E0"/>
+                <stop offset="100%" stop-color="#0066FF"/>
+              </radialGradient>
+            </defs>
+            <rect width="60" height="60" rx="14" fill="url(#swBg)"/>
+            <!-- Outer flow ring with arrow -->
+            <path d="M30 9 A21 21 0 1 1 10 38" stroke="url(#swArc)" stroke-width="3.5" stroke-linecap="round" fill="none"/>
+            <!-- Arrow head -->
+            <path d="M7 32 L10 39 L16 35.5" stroke="url(#swArc)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <!-- Center hub circle -->
+            <circle cx="30" cy="30" r="5.5" fill="url(#swHub)" opacity="0.95"/>
+            <!-- 3 satellite nodes -->
+            <circle cx="30" cy="13.5" r="4" fill="#00C2CB"/>
+            <circle cx="44" cy="39"   r="4" fill="#0077FF"/>
+            <circle cx="16" cy="39"   r="4" fill="#00A8E8"/>
+            <!-- Connecting spokes -->
+            <line x1="30" y1="24.5" x2="30"   y2="17.5" stroke="#00C2CB" stroke-width="1.8" stroke-linecap="round" opacity="0.85"/>
+            <line x1="34.5" y1="33.5" x2="40.5" y2="36.5" stroke="#0077FF" stroke-width="1.8" stroke-linecap="round" opacity="0.85"/>
+            <line x1="25.5" y1="33.5" x2="19.5" y2="36.5" stroke="#00A8E8" stroke-width="1.8" stroke-linecap="round" opacity="0.85"/>
+          </svg>
+        </div>
+        <span>Enfocus Switch</span>
+        <div class="app-badge">Workflow Expert</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══ ABOUT ═════════════════════════════════════════════ -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">About Me</div>
+        <h2>Automation Developer &amp; <br/><span>Creative Tech Specialist</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-left reveal">
+          <div class="about-avatar">
+            <div class="avatar-ring ring-1"></div>
+            <div class="avatar-ring ring-2"></div>
+            <div class="avatar-core">
+              <span>PI</span>
+            </div>
+            <div class="avatar-orbit orbit-1"><div class="orbit-icon oi-js">JS</div></div>
+            <div class="avatar-orbit orbit-2"><div class="orbit-icon oi-py">Py</div></div>
+            <div class="avatar-orbit orbit-3"><div class="orbit-icon oi-id">Id</div></div>
+            <div class="avatar-orbit orbit-4"><div class="orbit-icon oi-ai">Ai</div></div>
+            <div class="avatar-orbit orbit-5"><div class="orbit-icon oi-ps">Ps</div></div>
+            <div class="avatar-orbit orbit-6"><div class="orbit-icon oi-api">API</div></div>
+            <div class="avatar-orbit orbit-7"><div class="orbit-icon oi-uxp">UXP</div></div>
+            <div class="avatar-orbit orbit-8"><div class="orbit-icon oi-sw">Sw</div></div>
+          </div>
+        </div>
+        <div class="about-right reveal">
+          <p class="about-text">
+            I'm a <strong>Senior Automation Developer</strong> at Hogarth Worldwide with 9+ years of experience building
+            smart automation solutions for Adobe Creative Suite workflows. My scripts and tools have
+            <strong>eliminated up to 90% of manual production effort</strong> across global publishing clients.
+          </p>
+          <p class="about-text">
+            From InDesign typesetting automation and <strong>Enfocus Switch workflow creation</strong> to
+            Photoshop API &amp; UXP plugin development and Python batch tools —
+            I bridge the gap between creative design and scalable engineering.
+          </p>
+          <div class="about-info-grid">
+            <div class="info-item">
+              <div class="info-label">Location</div>
+              <div class="info-value">📍 Chennai, India</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Experience</div>
+              <div class="info-value">⚡ 9+ Years</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Speciality</div>
+              <div class="info-value">🎯 Adobe Automation</div>
+            </div>
+            <div class="info-item">
+              <div class="info-label">Available</div>
+              <div class="info-value">✅ Open to Opportunities</div>
+            </div>
+          </div>
+          <div class="about-btns">
+            <a href="#contact" class="btn-primary">Get In Touch</a>
+            <a href="Prabu_I_Resume.pdf" download class="btn-outline">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download CV
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SKILLS ════════════════════════════════════════════ -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Technical Skills</div>
+        <h2>Tools &amp; <span>Technologies</span></h2>
+      </div>
+      <div class="skills-grid">
+
+        <div class="skill-card reveal">
+          <div class="skill-card-icon" style="background:linear-gradient(135deg,#ff3366,#cc0044)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+          </div>
+          <h3>Adobe Scripting</h3>
+          <div class="skill-tags">
+            <span>JavaScript</span><span>ExtendScript</span><span>AppleScript</span>
+          </div>
+          <div class="skill-bar-group">
+            <div class="skill-bar-row"><span>ExtendScript</span><div class="skill-bar"><div class="skill-fill" data-w="95"></div></div></div>
+            <div class="skill-bar-row"><span>JavaScript</span><div class="skill-bar"><div class="skill-fill" data-w="90"></div></div></div>
+            <div class="skill-bar-row"><span>AppleScript</span><div class="skill-bar"><div class="skill-fill" data-w="85"></div></div></div>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card-icon" style="background:linear-gradient(135deg,#7c3aed,#5b21b6)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          </div>
+          <h3>Automation &amp; Workflow</h3>
+          <div class="skill-tags">
+            <span>Enfocus Switch</span><span>Workflow Creation</span><span>Preflight</span><span>Automator</span>
+          </div>
+          <div class="skill-bar-group">
+            <div class="skill-bar-row"><span>Enfocus Switch</span><div class="skill-bar"><div class="skill-fill" data-w="95"></div></div></div>
+            <div class="skill-bar-row"><span>Workflow Design</span><div class="skill-bar"><div class="skill-fill" data-w="95"></div></div></div>
+            <div class="skill-bar-row"><span>Preflight / QA</span><div class="skill-bar"><div class="skill-fill" data-w="90"></div></div></div>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card-icon" style="background:linear-gradient(135deg,#0ea5e9,#0369a1)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg>
+          </div>
+          <h3>Programming</h3>
+          <div class="skill-tags">
+            <span>Python</span><span>TypeScript</span><span>Next.js</span>
+          </div>
+          <div class="skill-bar-group">
+            <div class="skill-bar-row"><span>Python</span><div class="skill-bar"><div class="skill-fill" data-w="78"></div></div></div>
+            <div class="skill-bar-row"><span>TypeScript</span><div class="skill-bar"><div class="skill-fill" data-w="72"></div></div></div>
+            <div class="skill-bar-row"><span>Next.js</span><div class="skill-bar"><div class="skill-fill" data-w="65"></div></div></div>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card-icon" style="background:linear-gradient(135deg,#a855f7,#7e22ce)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Adobe API &amp; UXP</h3>
+          <div class="skill-tags">
+            <span>Photoshop API</span><span>UXP</span><span>CEP</span><span>Plugin Dev</span>
+          </div>
+          <div class="skill-bar-group">
+            <div class="skill-bar-row"><span>Photoshop API</span><div class="skill-bar"><div class="skill-fill" data-w="82"></div></div></div>
+            <div class="skill-bar-row"><span>UXP Plugins</span><div class="skill-bar"><div class="skill-fill" data-w="78"></div></div></div>
+            <div class="skill-bar-row"><span>CEP Extensions</span><div class="skill-bar"><div class="skill-fill" data-w="75"></div></div></div>
+          </div>
+        </div>
+
+        <div class="skill-card reveal">
+          <div class="skill-card-icon" style="background:linear-gradient(135deg,#f59e0b,#d97706)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <h3>Web &amp; Data</h3>
+          <div class="skill-tags">
+            <span>HTML</span><span>CSS</span><span>XML</span><span>XSLT</span><span>XPath</span>
+          </div>
+          <div class="skill-bar-group">
+            <div class="skill-bar-row"><span>XML / XSLT</span><div class="skill-bar"><div class="skill-fill" data-w="88"></div></div></div>
+            <div class="skill-bar-row"><span>HTML / CSS</span><div class="skill-bar"><div class="skill-fill" data-w="82"></div></div></div>
+            <div class="skill-bar-row"><span>XPath</span><div class="skill-bar"><div class="skill-fill" data-w="80"></div></div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ EXPERIENCE ════════════════════════════════════════ -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Career</div>
+        <h2>Professional <span>Experience</span></h2>
+      </div>
+      <div class="timeline">
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="tl-header">
+              <div>
+                <h3>Senior Automation Developer</h3>
+                <div class="tl-company">Hogarth Worldwide · Chennai</div>
+              </div>
+              <div class="tl-date">June 2021 – Present</div>
+            </div>
+            <div class="tl-tags">
+              <span>JavaScript</span><span>ExtendScript</span><span>AppleScript</span>
+              <span>Enfocus Switch</span><span>Workflow Creation</span><span>Ps API</span><span>UXP</span><span>UAT</span>
+            </div>
+            <ul class="tl-bullets">
+              <li>Architected end-to-end automation solutions eliminating up to <strong>90% of manual effort</strong> across global client accounts.</li>
+              <li>Designed and deployed <strong>Enfocus Switch workflow creation</strong> — routing print-ready files through preflight, conversion, and delivery stages with zero manual handoffs.</li>
+              <li>Built <strong>Photoshop API &amp; UXP plugins</strong> to extend Adobe applications with custom automation panels and batch-processing capabilities.</li>
+              <li>Spearheaded code review processes and owned the full <strong>UAT lifecycle</strong> ensuring zero critical issues at go-live.</li>
+              <li>Mentored junior developers, elevating team capability and reducing onboarding time.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="tl-header">
+              <div>
+                <h3>InDesign Developer</h3>
+                <div class="tl-company">TNQ Books and Journals · Chennai</div>
+              </div>
+              <div class="tl-date">Mar 2020 – June 2021</div>
+            </div>
+            <div class="tl-tags">
+              <span>InDesign Scripting</span><span>Template Design</span><span>XML</span>
+            </div>
+            <ul class="tl-bullets">
+              <li>Developed <strong>production-grade InDesign templates</strong> for McGraw Hill, Elsevier, and SJS Books.</li>
+              <li>Automated the entire <strong>first-pass file generation pipeline</strong> via InDesign scripting.</li>
+              <li>Authored reusable script libraries for style application, image placement &amp; TOC generation.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="tl-header">
+              <div>
+                <h3>InDesign Template Developer</h3>
+                <div class="tl-company">Scientific Publishing Services · Chennai</div>
+              </div>
+              <div class="tl-date">Feb 2017 – Mar 2020</div>
+            </div>
+            <div class="tl-tags">
+              <span>InDesign</span><span>Automation Scripting</span><span>Palgrave</span><span>Wiley</span>
+            </div>
+            <ul class="tl-bullets">
+              <li>Delivered InDesign templates for <strong>Palgrave Macmillan, Taylor &amp; Francis, and Wiley</strong>.</li>
+              <li>Built custom automation tools for batch style updates and footnote management.</li>
+              <li>Achieved consistently high acceptance rate on first submission through thorough QA.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="tl-header">
+              <div>
+                <h3>InDesign Associate</h3>
+                <div class="tl-company">TNQ Books and Journals · Chennai</div>
+              </div>
+              <div class="tl-date">Jan 2015 – Jan 2017</div>
+            </div>
+            <div class="tl-tags">
+              <span>Adobe InDesign</span><span>Typesetting</span><span>SJS Journals</span>
+            </div>
+            <ul class="tl-bullets">
+              <li>Composed <strong>first-pass typeset files</strong> from raw manuscripts with high accuracy.</li>
+              <li>Managed full-cycle layout production for SJS Journals.</li>
+              <li>Built the foundation in typesetting that launched my automation career.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PROJECTS ══════════════════════════════════════════ -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Work</div>
+        <h2>Notable <span>Projects</span></h2>
+      </div>
+      <div class="projects-grid">
+
+        <div class="project-card reveal" data-color="#ff3366">
+          <div class="project-card-inner">
+            <div class="project-card-front">
+              <div class="project-icon" style="background:linear-gradient(135deg,#ff3366,#cc0044)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+              </div>
+              <h3>Photoshop Automation</h3>
+              <p>High-volume image resizing, slicing &amp; batch processing tool</p>
+              <div class="project-tags"><span>JavaScript</span><span>Photoshop</span></div>
+            </div>
+            <div class="project-card-back">
+              <h3>Photoshop Automation Tool</h3>
+              <p>Built a JavaScript-powered resizing and slicing tool for high-volume automated image processing, eliminating repetitive manual steps and cutting production time significantly.</p>
+              <div class="project-impact"><span>⚡ 90% faster processing</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-color="#ff3366">
+          <div class="project-card-inner">
+            <div class="project-card-front">
+              <div class="project-icon" style="background:linear-gradient(135deg,#cc0044,#990033)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+              </div>
+              <h3>InDesign First-Pass</h3>
+              <p>Full automation of first-pass file generation &amp; template adjustments</p>
+              <div class="project-tags"><span>ExtendScript</span><span>InDesign</span></div>
+            </div>
+            <div class="project-card-back">
+              <h3>InDesign First-Pass Automation</h3>
+              <p>Developed scripts to fully automate first-pass file generation and template adjustments, reducing production lead times and eliminating manual setup effort.</p>
+              <div class="project-impact"><span>⚡ Zero manual setup</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-color="#0ea5e9">
+          <div class="project-card-inner">
+            <div class="project-card-front">
+              <div class="project-icon" style="background:linear-gradient(135deg,#22c55e,#16a34a)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
+              </div>
+              <h3>Excel Reporting</h3>
+              <p>Real-time production reporting dashboards via ExtendScript &amp; XLSX.js</p>
+              <div class="project-tags"><span>ExtendScript</span><span>XLSX.js</span></div>
+            </div>
+            <div class="project-card-back">
+              <h3>Excel Reporting Integration</h3>
+              <p>Automated Excel file generation using ExtendScript and XLSX.js, enabling real-time production reporting dashboards accessible to non-technical stakeholders.</p>
+              <div class="project-impact"><span>⚡ Live dashboards</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-color="#ff9a00">
+          <div class="project-card-inner">
+            <div class="project-card-front">
+              <div class="project-icon" style="background:linear-gradient(135deg,#ff9a00,#cc6d00)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <h3>Illustrator Automation</h3>
+              <p>Batch artwork processing — layers, colour corrections &amp; asset exports</p>
+              <div class="project-tags"><span>ExtendScript</span><span>Illustrator</span></div>
+            </div>
+            <div class="project-card-back">
+              <h3>Illustrator Automation Tool</h3>
+              <p>Developed ExtendScript-based automation for Adobe Illustrator to batch-process artwork files — handling layer management, colour corrections, and asset exports at scale.</p>
+              <div class="project-impact"><span>⚡ Batch artwork in seconds</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-color="#7c3aed">
+          <div class="project-card-inner">
+            <div class="project-card-front">
+              <div class="project-icon" style="background:linear-gradient(135deg,#7c3aed,#5b21b6)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><circle cx="12" cy="5" r="3"/><circle cx="5" cy="19" r="3"/><circle cx="19" cy="19" r="3"/><line x1="12" y1="8" x2="5.5" y2="16.5"/><line x1="12" y1="8" x2="18.5" y2="16.5"/></svg>
+              </div>
+              <h3>Enfocus Switch Workflow Creation</h3>
+              <p>End-to-end automated print pipelines — preflight, format conversion, routing &amp; delivery</p>
+              <div class="project-tags"><span>Enfocus Switch</span><span>Workflow</span><span>Preflight</span></div>
+            </div>
+            <div class="project-card-back">
+              <h3>Enfocus Switch Workflow Creation</h3>
+              <p>Designed and deployed end-to-end automated print workflows using Enfocus Switch — routing files through custom preflight profiles, format conversion, and final delivery stages, eliminating all manual handoffs and dramatically improving throughput.</p>
+              <div class="project-impact"><span>⚡ Zero manual handoffs</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card reveal" data-color="#0ea5e9">
+          <div class="project-card-inner">
+            <div class="project-card-front">
+              <div class="project-icon" style="background:linear-gradient(135deg,#0ea5e9,#0369a1)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="12" y1="2" x2="12" y2="22"/></svg>
+              </div>
+              <h3>Python Automation</h3>
+              <p>File processing, data extraction &amp; batch operations integrated into production pipelines</p>
+              <div class="project-tags"><span>Python</span><span>Automation</span></div>
+            </div>
+            <div class="project-card-back">
+              <h3>Python Automation Scripts</h3>
+              <p>Built Python scripts to automate file processing, data extraction, and batch operations — integrating seamlessly with existing production pipelines to reduce manual intervention.</p>
+              <div class="project-impact"><span>⚡ Pipeline integration</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ DOWNLOAD ══════════════════════════════════════════ -->
+  <section id="download">
+    <div class="container">
+      <div class="download-box reveal">
+        <div class="download-left">
+          <h2>Ready to work together?</h2>
+          <p>Download my resume in your preferred format or get in touch directly.</p>
+        </div>
+        <div class="download-btns">
+          <a href="Prabu_I_Resume.pdf" download class="dl-btn pdf">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            Download PDF
+          </a>
+          <a href="Prabu_I_Resume.docx" download class="dl-btn docx">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            Download DOCX
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CONTACT ═══════════════════════════════════════════ -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">Contact</div>
+        <h2>Let's <span>Connect</span></h2>
+      </div>
+      <div class="contact-grid">
+        <a href="mailto:your@email.com" class="contact-card reveal">
+          <div class="contact-icon" style="background:linear-gradient(135deg,#ff3366,#cc0044)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+          </div>
+          <div class="contact-label">Email</div>
+          <div class="contact-value">your@email.com</div>
+        </a>
+        <a href="tel:+91XXXXXXXXXX" class="contact-card reveal">
+          <div class="contact-icon" style="background:linear-gradient(135deg,#22c55e,#16a34a)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12 19.79 19.79 0 0 1 1.07 3.4 2 2 0 0 1 3.05 1.25h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 9.1a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+          </div>
+          <div class="contact-label">Phone</div>
+          <div class="contact-value">+91 XXXXXXXXXX</div>
+        </a>
+        <a href="https://linkedin.com/in/your-profile" target="_blank" class="contact-card reveal">
+          <div class="contact-icon" style="background:linear-gradient(135deg,#0ea5e9,#0369a1)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </div>
+          <div class="contact-label">LinkedIn</div>
+          <div class="contact-value">linkedin.com/in/your-profile</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ════════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-logo">PI<span>.</span></div>
+      <p>© 2026 Prabu I. Built with ❤️ and automation.</p>
+      <div class="footer-links">
+        <a href="Prabu_I_Resume.pdf" download>Resume PDF</a>
+        <a href="Prabu_I_Resume.docx" download>Resume DOCX</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
